@@ -1,12 +1,20 @@
+@import "config/layout";
+
 .top-menu {
   width: 80%;
   height: 60px;
   margin: 0 auto;
 }
 
-#home .hero .composer, #home .posts {
-  width: 572px;
-  margin: 0 auto;
+#home {
+  .hero .composer, .posts-list {
+    width: 572px;
+    margin: 0 auto;
+  }
+
+  .posts-list {
+    margin-top: $posts-gap * 2;
+  }
 }
 
 #home .hero {

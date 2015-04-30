@@ -2,13 +2,16 @@
   <div class="hero">
     <composer placeholder="What's on your mind?" />
   </div>
-  <div class="posts">
+  <div class="posts-list">
     <div class="post" ng-repeat="post in posts">
-      <img class="portrait" ng-src="{{post.portrait}}" alt="Portrait of {{post.author}}" />
-      <div class="content">
-        <h3 class="author">{{post.author}}</h3>
-        <p class="message">{{post.message}}</p>
-      </div>
+      <article class="body">
+        <img class="portrait" ng-src="{{post.portrait}}" alt="Portrait of {{post.author}}" />
+        <div class="content">
+          <h3 class="author">{{post.author}}</h3>
+          <p class="message">{{post.message}}</p>
+        </div>
+      </article>
+      <img class="media" ng-if="post.picture" ng-src="{{post.picture}}" />
     </div>
   </div>
 </div>
