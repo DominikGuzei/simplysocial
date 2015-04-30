@@ -3,8 +3,8 @@ simplysocial
 A tiny web application prototype built by Dominik Guzei as part of the
 recruiting challenge at InVision.
 
-Development Setup
-------------------
+Setup
+-----
 To speedup development this web app uses node.js and bower to concatenate
 and minify Javascript and CSS on the fly.
 
@@ -13,6 +13,10 @@ and minify Javascript and CSS on the fly.
 3. Install Bower `npm install -g bower`
 3. Install runtime dependencies with `bower install`
 
-How to Run
------------
+Run
+---
 Just run `gulp dev` to start watching file changes and kickoff the dev process.
+
+Build
+-----
+Enter `gulp build` in the console to prepare the app for production.
