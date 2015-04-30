@@ -4,12 +4,15 @@ var minifyCss = require('gulp-minify-css');
 var flatten = require('gulp-flatten');
 var concat = require('gulp-concat');
 var concatWithSourceMaps = require('gulp-concat-sourcemap');
+var connect = require('gulp-connect');
+var sass = require('gulp-sass');
 
 var paths = {
   vendorScripts: [
     'bower_components/jquery/dist/jquery.js',
     'bower_components/angular/angular.js',
     'bower_components/angular-route/angular-route.js',
+    'node_modules/angular-retina/dist/angular-retina.js',
   ],
   scripts: [
     'js/vendor/*.js',
@@ -17,15 +20,15 @@ var paths = {
     'js/**/*.js',
   ],
   styles: [
-    'css/base.css',
-    'css/layout.css',
-    'css/mixins/*.css',
-    'css/modules/*.css',
-    'css/theme.css'
+    'css/base.scss',
+    'css/layout.scss',
+    'css/mixins/*.scss',
+    'css/modules/*.scss',
+    'css/theme.scss'
   ]
 };
 
-output = './dist'
+output = './dist';
 
 // Concatenate and minify vendor scripts
 gulp.task('vendor', function() {
@@ -60,6 +63,7 @@ gulp.task('js-dev', function() {
 // Concatenate and minify CSS with sourcemaps
 gulp.task('css', function() {
   return gulp.src(paths.styles)
+    .pipe(sass())
     .pipe(concat('simplysocial.min.css'))
     .pipe(minifyCss())
     .pipe(gulp.dest(output));
@@ -68,8 +72,13 @@ gulp.task('css', function() {
 // Concatenate and minify CSS with sourcemaps
 gulp.task('css-dev', function() {
   return gulp.src(paths.styles)
+    .pipe(sass())
     .pipe(concatWithSourceMaps('simplysocial.min.css'))
     .pipe(gulp.dest(output));
+});
+
+gulp.task('connect', function() {
+  connect.server();
 });
 
 gulp.task('watch', function () {
@@ -78,5 +87,5 @@ gulp.task('watch', function () {
   gulp.watch(paths.styles, ['css-dev']);
 });
 
-gulp.task('dev', ['vendor-dev', 'js-dev', 'css-dev', 'watch']);
+gulp.task('dev', ['vendor-dev', 'js-dev', 'css-dev', 'watch', 'connect']);
 gulp.task('build', ['vendor', 'js', 'css']);

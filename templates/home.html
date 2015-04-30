@@ -1,7 +1,14 @@
 <div id="home">
   <div class="hero">
-    <div class="content">
-      <composer placeholder="What's on your mind?" />
+    <composer placeholder="What's on your mind?" />
+  </div>
+  <div class="posts">
+    <div class="post" ng-repeat="post in posts">
+      <img class="portrait" ng-src="{{post.portrait}}" alt="Portrait of {{post.author}}" />
+      <div class="content">
+        <h3 class="author">{{post.author}}</h3>
+        <p class="message">{{post.message}}</p>
+      </div>
     </div>
   </div>
 </div>

@@ -1,6 +1,7 @@
 
 SimplySocial = angular.module('SimplySocial', [
-  'ngRoute'
+  'ngRoute',
+  'ngRetina'
 ]);
 
 SimplySocial.config(['$routeProvider', function($routeProvider) {
