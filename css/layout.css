@@ -4,11 +4,6 @@
   margin: 0 auto;
 }
 
-.hero {
-  height: 426px;
-  background: transparent url('images/hero.png') no-repeat;
-}
-
 #home .content {
   width: 572px;
   margin: 0 auto;

@@ -1,5 +1,23 @@
 
+.hero {
+  height: 426px;
+  background: url('images/hero.jpg') top center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 #home .hero .composer {
   background-color: #00b286;
   opacity: 0.7;
+}
+
+/* Retina Display support */
+@media (-webkit-min-device-pixel-ratio: 1.5),(min-resolution: 144dpi) {
+
+  .hero {
+    background-image: url('images/hero@2x.jpg');
+  }
+
 }
