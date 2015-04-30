@@ -1,7 +1,7 @@
 
 .hero {
   height: 426px;
-  background: url('images/hero.jpg') top center no-repeat;
+  background: url('../images/hero.jpg') top center no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -17,7 +17,7 @@
 @media (-webkit-min-device-pixel-ratio: 1.5),(min-resolution: 144dpi) {
 
   .hero {
-    background-image: url('images/hero@2x.jpg');
+    background-image: url('../images/hero@2x.jpg');
   }
 
 }

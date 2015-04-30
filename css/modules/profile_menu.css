@@ -4,7 +4,7 @@
 .profile-menu {
   width: 50px;
   height: 30px;
-  background: url('images/icons/dropdown-triangle.png') center right;
+  background: url('../images/icons/dropdown-triangle.png') center right;
   background-size: 7px 4px;
   background-repeat: no-repeat;
   position: relative;
@@ -49,6 +49,6 @@
 @media (-webkit-min-device-pixel-ratio: 1.5),(min-resolution: 144dpi) {
 
   .profile-menu {
-    background-image: url('images/icons/dropdown-triangle@2x.png');
+    background-image: url('../images/icons/dropdown-triangle@2x.png');
   }
 }
