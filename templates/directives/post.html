@@ -1,0 +1,20 @@
+<div class="post">
+  <article class="body">
+    <img class="portrait" ng-src="{{data.portrait}}" alt="Portrait of {{data.author}}" />
+    <div class="content">
+      <h3 class="author">{{data.author}}</h3>
+      <p class="message">{{data.message}}</p>
+
+      <div class="comments" ng-if="data.comments">
+        <a class="toggle" ng-click="toggleComments()">
+          {{ showComments ? 'Collapse' : 'Expand' }}
+        </a>
+        <comment ng-if="showComments"
+                 ng-repeat="comment in data.comments"
+                 data="comment" />
+      </div>
+
+    </div>
+  </article>
+  <img class="media" ng-if="data.picture" ng-src="{{data.picture}}" />
+</div>
