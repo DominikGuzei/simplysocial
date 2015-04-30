@@ -1,33 +1,36 @@
 @import "../config/colors";
+@import "../config/layout";
 
-.post {
-
-  .body {
-    padding: 25px;
-    overflow: hidden;
-    border: 1px solid #e4e6ea;
-    border-radius: 4px;
-  }
-
-  .author {
-    margin-top: 0;
-    font-size: 16px;
-  }
+post {
+  display: block;
+  overflow: hidden;
+  border: 1px solid $post-border-color;
+  border-radius: 4px;
 
   .portrait {
     width: 40px;
     height: 40px;
     float: left;
-    margin-right: 20px;
+    margin: $post-padding;
+    margin-right: 0;
   }
 
   .content {
+    padding: $post-padding;
     float: left;
-    width: calc(100% - 60px);
+    width: calc(100% - 80px);
+  }
+
+  .author {
+    margin-top: 0;
+    font-size: 16px;
+    margin-bottom: 8px;
   }
 
   .message {
     color: $post-text-color;
+    font-size: 15px;
+    margin: 0x;
   }
 
   .media {
@@ -36,4 +39,43 @@
     bottom: 3px;
   }
 
+  .comment-toggle {
+    margin-top: 18px;
+    font-size: 12px;
+    color: $comments-toggle-color;
+    padding-right: 16px;
+    background: url('../images/icons/dropdown-triangle.png') center right;
+    background-size: 7px 4px;
+    background-repeat: no-repeat;
+
+    &.is-expanded {
+      background-image: url('../images/icons/collapse-triangle.png');
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .comments {
+    clear: both;
+    margin-top: 25px;
+  }
+
+  comment {
+    display: block;
+    overflow: hidden;
+    background-color: $comments-bg-color;
+    border-bottom: 1px solid $comments-border-color;
+    &:first-child {
+      border-top: 1px solid $comments-border-color;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .content {
+      padding-bottom: $comment-padding;
+    }
+  }
 }
