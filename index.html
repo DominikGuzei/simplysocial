@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html lang="en" ng-app="SimplySocial">
+<head>
+  <meta charset="utf-8">
+  <title>simplysocial</title>
+  <meta name="description" content="A simple social media site.">
+  <meta name="author" content="Dominik Guzei">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,200' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="simplysocial.min.css?v=1.0">
+</head>
+
+<body>
+
+  <header>
+    <!-- Sticky top menu that is always visible -->
+    <div class="top-menu">
+      <!-- Brand logo and home button -->
+      <a class="logo icon-button" href="#">simplysocial</a>
+      
+      <div class="tools">
+        <!-- Triggers overlay to compose new message -->
+        <a class="new-message icon-button" href="#/new-message">new message</a>
+        <!-- Search not implemented -->
+        <input class="search" />
+        <!-- Flyout menu with profile actions -->
+        <div class="profile-menu">
+          <img class="portrait" src="images/profile-picture@2x.png" />
+          <ul class="flyout arrow-box">
+            <li>Profile</li>
+            <li>Followers</li>
+            <li>Following</li>
+            <li>Settings</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div ng-view></div>
+  <script src="simplysocial.min.js"></script>
+</body>
+</html>

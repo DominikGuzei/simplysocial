@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+button {
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.icon-button {
+  overflow: hidden;
+  text-indent: -999px;
+  background-repeat: no-repeat;
+}
