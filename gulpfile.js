@@ -21,9 +21,9 @@ var paths = {
   ],
   styles: [
     'css/base.scss',
-    'css/layout.scss',
     'css/mixins/*.scss',
     'css/modules/*.scss',
+    'css/layout.scss',
     'css/theme.scss'
   ]
 };
