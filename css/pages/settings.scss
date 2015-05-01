@@ -102,6 +102,11 @@
         &:focus {
           outline: none;
           border: 1px solid $settings-field-focus-border-color;
+          background-color: $settings-field-focus-bg-color;
+        }
+
+        &:hover {
+          background-color: $settings-field-focus-bg-color;
         }
       }
     }

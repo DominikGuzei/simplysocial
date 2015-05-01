@@ -29,6 +29,7 @@ $settings-button-color: #bec3cc;
 $settings-section-border-color: #dee1e5;
 $settings-field-border-color: #bec3cc;
 $settings-field-focus-border-color: $settings-correct-color;
+$settings-field-focus-bg-color: rgba($settings-field-focus-border-color, 0.05);
 $settings-field-color: #3f454d;
 $settings-password-color: #c5c7c9;
 $settings-password-repeat-color: $settings-correct-color;
