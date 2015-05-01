@@ -1,17 +1,35 @@
 <img class="portrait" ng-src="{{data.portrait}}" alt="Portrait of {{data.author}}" />
+
+<!-- CONTENTS -->
 <div class="content">
-  <h3 class="author">{{data.author}}</h3>
+
+  <!-- META DATA -->
+  <div class="meta">
+    <h3 class="author">{{data.author}}</h3>
+    <button class="reply icon-button">reply</button>
+    <button class="like icon-button">like</button>
+    <span class="time">3m</span>
+  </div>
+
+  <!-- MESSAGE -->
   <p class="message">{{data.message}}</p>
+
+  <!-- COMMENTS TOGGLE -->
   <a class="comment-toggle"
      ng-if="data.comments"
      ng-click="toggleComments()"
      ng-class="{'is-expanded': showComments}">
     {{ showComments ? 'Collapse' : 'Expand' }}
   </a>
+
 </div>
+
+<!-- COMMENTS -->
 <div class="comments" ng-if="data.comments">
   <comment ng-if="showComments"
            ng-repeat="comment in data.comments"
            data="comment" />
 </div>
+
+<!-- PICTURE -->
 <img class="media" ng-if="data.picture" ng-src="{{data.picture}}" />

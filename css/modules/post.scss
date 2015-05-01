@@ -1,5 +1,7 @@
 @import "../config/colors";
 @import "../config/sizes";
+@import "../config/devices";
+@import "../mixins/media_for";
 
 post {
   display: block;
@@ -18,19 +20,56 @@ post {
   .content {
     padding: $post-padding;
     float: left;
-    width: calc(100% - 80px);
+    width: calc(100% - 60px);
   }
 
   .author {
-    margin-top: 0;
+    width: calc(100% - 90px);
+    display: inline-block;
+    margin: 0;
     font-size: 16px;
-    margin-bottom: 8px;
+    color: $post-author-color;
+  }
+
+  .meta {
+
+    .reply, .like, .time {
+      display: inline-block;
+    }
+
+    .icon-button {
+      width: 15px;
+      height: 15px;
+      margin-right: 10px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .reply {
+      background-image: url('../images/icons/reply-to-post.png');
+      @include media-for($retina-devices) {
+        background-image: url('../images/icons/reply-to-post@2x.png');
+      }
+    }
+
+    .like {
+      background-image: url('../images/icons/like-post.png');
+      @include media-for($retina-devices) {
+        background-image: url('../images/icons/like-post@2x.png');
+      }
+    }
+
+    .time {
+      font-size: 14px;
+      color: $post-text-color;
+    }
   }
 
   .message {
     color: $post-text-color;
     font-size: 15px;
-    margin: 0x;
+    margin: 0.5em 0;
   }
 
   .media {
@@ -47,9 +86,15 @@ post {
     background: url('../images/icons/dropdown-triangle.png') center right;
     background-size: 7px 4px;
     background-repeat: no-repeat;
+    @include media-for($retina-devices) {
+      background-image: url('../images/icons/dropdown-triangle@2x.png');
+    }
 
     &.is-expanded {
       background-image: url('../images/icons/collapse-triangle.png');
+      @include media-for($retina-devices) {
+        background-image: url('../images/icons/collapse-triangle@2x.png');
+      }
     }
 
     &:hover {
