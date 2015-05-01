@@ -1,0 +1,17 @@
+@import "../config/colors";
+
+footer {
+  font-size: 11px;
+  text-align: center;
+  margin: 40px 0;
+
+  a:link {
+    margin-right: 25px;
+    text-decoration: none;
+    color: $footer-link-color;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
