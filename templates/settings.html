@@ -24,10 +24,21 @@
       <h2>Notifications</h2>
 
       <div class="fields">
-        <input class="toggle" type="checkbox" value="on" name="email-when-post-favourite" />
-        <label class="label" for="email-when-post-favourite">
-          email me when my posts are marked as favorites
-        </label>
+        <toggle-checkbox is-on="true"
+                         label="email me when my posts are marked as favorites"
+                         name="email-when-post-favourite"></toggle-checkbox>
+
+        <toggle-checkbox is-on="true"
+                         label="email me when I’m mentioned"
+                         name="email-when-mentioned"></toggle-checkbox>
+
+        <toggle-checkbox is-on="true"
+                         label="email me when I get a reply"
+                         name="email-when-reply"></toggle-checkbox>
+
+        <toggle-checkbox is-on="false"
+                         label="email me when someone follows me"
+                         name="email-when-follow"></toggle-checkbox>
       </div>
     </section>
 
