@@ -1,0 +1,8 @@
+/**
+ * Sass Mixin that wraps contents with a specified media-query
+ */
+@mixin media-for($media-query) {
+  @media #{$media-query} {
+    @content;
+  }
+}

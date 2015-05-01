@@ -1,0 +1,8 @@
+/**
+ * Sass Mixin that adds cross-browser styles for the placeholder of the element
+ */
+@mixin placeholder {
+  &::-webkit-input-placeholder { @content }
+  &::-moz-placeholder { @content }
+  &:-ms-input-placeholder { @content }
+}

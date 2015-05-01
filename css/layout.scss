@@ -8,13 +8,19 @@
 
 #home {
   .hero {
+    min-height: 426px;
+    overflow: hidden;
     padding-top: 120px;
     position: relative;
   }
 
-  .hero .composer, .posts-list {
+  .hero composer, .posts-list {
     width: $layout-narrow;
     margin: 0 auto;
+  }
+
+  .hero composer {
+    margin-bottom: 135px;
   }
 
   .hero .subnav {

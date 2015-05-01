@@ -1,0 +1,9 @@
+/**
+ * Sass Mixin that adds background-size cover in cross-browser fashion
+ */
+@mixin cover {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
