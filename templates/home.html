@@ -1,6 +1,17 @@
 <div id="home">
   <div class="hero">
     <composer placeholder="What's on your mind?" />
+    <div class="subnav">
+      <ul class="filters">
+        <li class="active">All Posts</li>
+        <li>Photos</li>
+        <li>Videos</li>
+      </ul>
+      <div class="view-options">
+        <ng-include class="active list" src="'images/icons/view-option-list.svg'"></ng-include>
+        <ng-include class="tiles" src="'images/icons/view-option-tiles.svg'"></ng-include>
+      </div>
+    </div>
   </div>
   <div class="posts-list">
     <post ng-repeat="post in posts" data="post" show-comments="false" />

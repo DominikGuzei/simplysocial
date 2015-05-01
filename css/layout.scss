@@ -1,22 +1,30 @@
 @import "config/layout";
 
 .top-menu {
-  width: 80%;
+  width: $topmenu-width;
   height: 60px;
   margin: 0 auto;
 }
 
 #home {
+  .hero {
+    padding-top: 120px;
+    position: relative;
+  }
+
   .hero .composer, .posts-list {
-    width: 572px;
+    width: $layout-narrow;
     margin: 0 auto;
+  }
+
+  .hero .subnav {
+    width: $layout-narrow;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - #{$layout-narrow/2});
   }
 
   .posts-list {
     margin-top: $posts-gap * 2;
   }
-}
-
-#home .hero {
-  padding-top: 120px;
 }
