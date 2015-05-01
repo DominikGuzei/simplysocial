@@ -1,6 +1,7 @@
 <div id="home">
   <div class="hero">
-    <composer placeholder="What's on your mind?" />
+    <composer placeholder="What's on your mind?"
+              on-submit="controller.createNewMessage(text)"/>
     <div class="subnav">
       <ul class="filters">
         <li class="active">All Posts</li>
