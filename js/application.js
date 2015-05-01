@@ -11,6 +11,9 @@ SimplySocial.config(['$routeProvider', function($routeProvider) {
       templateUrl: 'templates/home.html',
       controller: 'HomeController'
     })
+    .when('/settings', {
+      templateUrl: 'templates/settings.html'
+    })
     .otherwise({
       redirectTo: '/'
     });

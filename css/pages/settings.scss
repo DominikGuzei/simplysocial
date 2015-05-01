@@ -1,0 +1,109 @@
+@import "../config/fonts";
+@import "../config/sizes";
+@import "../config/colors";
+@import "../config/devices";
+@import "../mixins/media_for";
+
+#settings {
+
+  width: $layout-narrow;
+  margin: 0 auto;
+
+  h1 {
+    @include font-regular;
+    font-size: 30px;
+    color: $settings-h1-color;
+    margin-top: 40px;
+  }
+
+  h2 {
+    @include font-light;
+    color: $settings-h1-color;
+    font-size: 13px;
+    text-transform: uppercase;
+  }
+
+  section {
+    padding-bottom: $settings-section-gap;
+    margin-bottom: $settings-section-gap;
+    border-bottom: 1px solid $settings-section-border-color;
+  }
+
+  .account {
+    $profile-pic-width: 150px;
+
+    .profile-pic {
+      float: left;
+      width: $profile-pic-width;
+      .portrait {
+        width: 84px;
+      }
+      .change {
+        display: block;
+        padding: 5px 22px;
+        border: 1px solid #CCC;
+        border-radius: 6px;
+        margin-top: 4px;
+        color: $settings-button-color;
+        &:hover {
+          color: darken($settings-button-color, 20%);
+        }
+      }
+    }
+    .fields {
+      width: calc(100% - #{$profile-pic-width});
+      overflow: hidden;
+
+      input {
+        display: block;
+        width: 100%;
+        border: 1px solid $settings-field-border-color;
+        border-radius: 4px;
+        padding: 10px 10px 8px 50px;
+        color: $settings-field-color;
+        font-size: 16px;
+        margin-bottom: $settings-field-gap;
+        background-size: 16px;
+        background-repeat: no-repeat;
+        background-position: 16px center;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &.name {
+          background-image: url('../images/icons/field-name.png');
+          @include media-for($retina-devices) {
+            background-image: url('../images/icons/field-name@2x.png');
+          }
+        }
+        &.email {
+          background-image: url('../images/icons/field-email.png');
+          @include media-for($retina-devices) {
+            background-image: url('../images/icons/field-email@2x.png');
+          }
+        }
+        &.password {
+          color: $settings-password-color;
+          background-image: url('../images/icons/field-password.png');
+          @include media-for($retina-devices) {
+            background-image: url('../images/icons/field-password@2x.png');
+          }
+        }
+
+        &.password-repeat {
+          color: $settings-password-repeat-color;
+          background-image: url('../images/icons/field-password-correct.png');
+          @include media-for($retina-devices) {
+            background-image: url('../images/icons/field-password-correct@2x.png');
+          }
+        }
+
+        &:focus {
+          outline: none;
+          border: 1px solid $settings-field-focus-border-color;
+        }
+      }
+    }
+  }
+}

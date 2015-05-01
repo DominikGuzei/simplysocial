@@ -23,7 +23,7 @@ var paths = {
   styles: [
     'css/base.scss',
     'css/vendor/*.scss',
-    'css/mixins/*.scss',
+    'css/pages/*.scss',
     'css/modules/*.scss',
     'css/layout.scss',
     'css/theme.scss'

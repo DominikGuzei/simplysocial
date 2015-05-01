@@ -1,0 +1,41 @@
+<div id="settings">
+  <h1>Settings</h1>
+
+  <form class="settings-form">
+
+    <section class="account">
+      <h2>Account</h2>
+
+      <div class="profile-pic">
+        <img class="portrait" ng-src="images/profile-big.png" />
+        <button class="change">change</button>
+      </div>
+
+      <div class="fields">
+        <input class="name" type="text" value="Jessica Tuan" />
+        <input class="email" type="email" value="jessica@mail.com" />
+        <input class="password" type="password" value="password" />
+        <input class="password-repeat" type="password" value="password" />
+      </div>
+
+    </section>
+
+    <section class="notifications">
+      <h2>Notifications</h2>
+
+      <div class="fields">
+        <input class="toggle" type="checkbox" value="on" name="email-when-post-favourite" />
+        <label class="label" for="email-when-post-favourite">
+          email me when my posts are marked as favorites
+        </label>
+      </div>
+    </section>
+
+    <section class="privacy">
+      <h2>Privacy</h2>
+    </section>
+
+    <button class="submit">Save Changes</button>
+
+  </form>
+</div>

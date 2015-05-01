@@ -33,17 +33,21 @@
     > li {
       width: 100%;
       padding: 7px 0 5px 14px;
-      color: #70767f;
       border-top: 1px solid #e2e5e9;
       font-size: 12px;
+      color: #70767f;
+
+      a:link, a:visited {
+        color: #70767f;
+        text-decoration: none;
+        &:hover {
+          color: black;
+          cursor: pointer;
+        }
+      }
 
       &:first-child {
         border: none;
-      }
-
-      &:hover {
-        color: black;
-        cursor: pointer;
       }
     }
   }
