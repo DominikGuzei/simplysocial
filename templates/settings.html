@@ -24,26 +24,47 @@
       <h2>Notifications</h2>
 
       <div class="fields">
-        <toggle-checkbox is-on="true"
-                         label="email me when my posts are marked as favorites"
-                         name="email-when-post-favourite"></toggle-checkbox>
+        <toggle is-on="true"
+                label="email me when my posts are marked as favorites"
+                name="email-when-post-favourite"></toggle>
 
-        <toggle-checkbox is-on="true"
-                         label="email me when I’m mentioned"
-                         name="email-when-mentioned"></toggle-checkbox>
+        <toggle is-on="true"
+                label="email me when I’m mentioned"
+                name="email-when-mentioned"></toggle>
 
-        <toggle-checkbox is-on="true"
-                         label="email me when I get a reply"
-                         name="email-when-reply"></toggle-checkbox>
+        <toggle is-on="true"
+                label="email me when I get a reply"
+                name="email-when-reply"></toggle>
 
-        <toggle-checkbox is-on="false"
-                         label="email me when someone follows me"
-                         name="email-when-follow"></toggle-checkbox>
+        <toggle is-on="false"
+                label="email me when someone follows me"
+                name="email-when-follow"></toggle>
       </div>
     </section>
 
     <section class="privacy">
       <h2>Privacy</h2>
+
+      <div class="fields">
+        <toggle is-on="true"
+                type="radio"
+                label="allow anyone to tag me"
+                name="tagging"
+                value="allow-tag-me"></toggle>
+
+        <toggle is-on="false"
+                type="radio"
+                label="only allow people I follow to tag me"
+                name="tagging"
+                value="allow-tag-if-follow"></toggle>
+
+        <toggle is-on="false"
+                type="radio"
+                label="don’t allow anyone to tag me"
+                name="tagging"
+                value="dont-allow-tagging"></toggle>
+      </div>
+
     </section>
 
     <button class="submit">Save Changes</button>
