@@ -1,5 +1,21 @@
-<img class="portrait" ng-src="{{comment.portrait}}" alt="Portrait of {{comment.author}}" />
-<div class="content">
-  <h3 class="author">{{comment.author}}</h3>
-  <p class="message">{{comment.message}}</p>
+<!-- CONTENTS -->
+<div class="comment-content">
+
+  <!-- AUTHOR PORTRAIT -->
+  <img class="portrait" ng-src="{{comment.portrait}}" alt="Portrait of {{comment.author}}" />
+
+  <!-- CONTENTS -->
+  <div class="content">
+    <!-- META DATA -->
+    <div class="meta">
+      <h3 class="author">{{comment.author}}</h3>
+      <button class="reply icon-button">reply</button>
+      <button class="like icon-button">like</button>
+      <span class="time">{{comment.postedAt | timeago}}</span>
+    </div>
+
+    <!-- MESSAGE -->
+    <p class="message">{{comment.message}}</p>
+  </div>
+
 </div>
