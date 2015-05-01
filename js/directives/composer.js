@@ -11,10 +11,6 @@ SimplySocial.directive('composer', ['$timeout', function($timeout) {
     link: function(scope, element, attrs) {
       scope.message = attrs.placeholder || '';
       message = element.find('.message');
-      // Focus message input when rendered
-      $timeout(function() {
-        message.elastic().focus();
-      });
 
       element.keydown(function(event) {
         if(event.keyCode == 13) { // ENTER KEY
