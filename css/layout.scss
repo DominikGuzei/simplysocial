@@ -85,17 +85,3 @@
     margin-top: $posts-gap * 2;
   }
 }
-
-footer {
-  @include media-for($small-screen) {
-    .links {
-      a:last-child {
-        margin-right: 0;
-      }
-    }
-    .copyright {
-      display: block;
-      margin-top: 10px;
-    }
-  }
-}

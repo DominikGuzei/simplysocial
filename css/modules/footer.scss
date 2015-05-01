@@ -1,9 +1,15 @@
 @import "../config/colors";
+@import "../config/devices";
+@import "../mixins/media_for";
 
 footer {
   font-size: 11px;
   text-align: center;
   margin: 40px 0;
+
+  .links {
+    display: inline-block;
+  }
 
   a:link {
     margin-right: 25px;
@@ -12,6 +18,18 @@ footer {
 
     &:hover {
       text-decoration: underline;
+    }
+  }
+
+  @include media-for($small-screen) {
+    .links {
+      a:last-child {
+        margin-right: 0;
+      }
+    }
+    .copyright {
+      display: block;
+      margin-top: 10px;
     }
   }
 }
