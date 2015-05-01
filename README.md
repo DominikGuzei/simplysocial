@@ -14,6 +14,7 @@ Due to the short timeframe (2 days) I could just finish the minimum requirements
 * Got to settings screen via profile dropdown
 * Expand / collapse comments
 * Only text / image posts (no video)
+* App is responsive (as much as possible in the short time)
 
 Setup
 -----
