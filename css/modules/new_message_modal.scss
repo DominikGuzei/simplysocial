@@ -2,9 +2,10 @@
 
 .new-message-modal .ngdialog-content {
   background-color: #DEE1E6;
-  width: 600px;
+  width: calc(100% - 20px);
+  max-width: 600px;
   margin: 0 auto;
-  margin-top: 300px;
+  margin-top: 200px;
   z-index: 999;
   overflow: hidden;
 
