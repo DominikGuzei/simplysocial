@@ -3,6 +3,8 @@ simplysocial
 A tiny web application prototype built by Dominik Guzei as part of the
 recruiting challenge at InVision.
 
+Production App: http://dominikguzei.github.io/simplysocial/#/
+
 Things that work:
 -----------------
 Due to the short timeframe (2 days) I could just finish the minimum requirements:
