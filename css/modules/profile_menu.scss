@@ -1,5 +1,6 @@
 @import "../config/devices";
 @import "../mixins/media_for";
+@import "../mixins/arrow_box";
 
 /* The profile flyout menu in the top menu */
 
@@ -22,6 +23,7 @@
   }
 
   .flyout {
+    @include arrow-box;
     display: none;
     position: absolute;
     width: 100px;

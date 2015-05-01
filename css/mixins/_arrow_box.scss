@@ -1,0 +1,28 @@
+
+/* Mixin module to render css arrow bubble effect. */
+@mixin arrow-box {
+  position: relative;
+  border-top: 1px solid #949596;
+
+  &:after, &:before {
+    bottom: 100%;
+    left: 76%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &:after {
+    border-bottom-color: #f4f5f7;
+    border-width: 5px;
+    margin-left: -5px;
+  }
+
+  &:before {
+    border-width: 5px;
+    margin-left: -5px;
+  }
+}
