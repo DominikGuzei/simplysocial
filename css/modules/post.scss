@@ -5,9 +5,12 @@
 
 post {
   display: block;
-  overflow: hidden;
-  border: 1px solid $post-border-color;
-  border-radius: 4px;
+
+  .post-content {
+    border: 1px solid $post-border-color;
+    border-radius: 4px;
+    overflow: hidden;
+  }
 
   .portrait {
     width: 40px;
