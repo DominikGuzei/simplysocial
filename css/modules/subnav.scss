@@ -16,9 +16,18 @@
       margin-right: 40px;
       padding: 15px 10px;
 
+      &:hover {
+        color: $subnav-active-color;
+        border-bottom: 5px solid rgba($subnav-active-border-color, 0.5);
+        cursor: pointer;
+      }
+
       &.active {
         color: $subnav-active-color;
         border-bottom: 5px solid $subnav-active-border-color;
+        &:hover {
+          cursor: default;
+        }
       }
     }
   }
