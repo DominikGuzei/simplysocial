@@ -1,0 +1,73 @@
+<div id="settings">
+  <h1>Settings</h1>
+
+  <form class="settings-form">
+
+    <section class="account">
+      <h2>Account</h2>
+
+      <div class="profile-pic">
+        <img class="portrait" ng-src="images/profile-big.png" />
+        <button class="change">change</button>
+      </div>
+
+      <div class="fields">
+        <input class="name" type="text" value="Jessica Tuan" />
+        <input class="email" type="email" value="jessica@mail.com" />
+        <input class="password" type="password" value="password" />
+        <input class="password-repeat" type="password" value="password" />
+      </div>
+
+    </section>
+
+    <section class="notifications">
+      <h2>Notifications</h2>
+
+      <div class="fields">
+        <toggle is-on="true"
+                label="email me when my posts are marked as favorites"
+                name="email-when-post-favourite"></toggle>
+
+        <toggle is-on="true"
+                label="email me when I’m mentioned"
+                name="email-when-mentioned"></toggle>
+
+        <toggle is-on="true"
+                label="email me when I get a reply"
+                name="email-when-reply"></toggle>
+
+        <toggle is-on="false"
+                label="email me when someone follows me"
+                name="email-when-follow"></toggle>
+      </div>
+    </section>
+
+    <section class="privacy">
+      <h2>Privacy</h2>
+
+      <div class="fields">
+        <toggle is-on="true"
+                type="radio"
+                label="allow anyone to tag me"
+                name="tagging"
+                value="allow-tag-me"></toggle>
+
+        <toggle is-on="false"
+                type="radio"
+                label="only allow people I follow to tag me"
+                name="tagging"
+                value="allow-tag-if-follow"></toggle>
+
+        <toggle is-on="false"
+                type="radio"
+                label="don’t allow anyone to tag me"
+                name="tagging"
+                value="dont-allow-tagging"></toggle>
+      </div>
+
+    </section>
+
+    <button class="submit">Save Changes</button>
+
+  </form>
+</div>

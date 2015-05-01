@@ -3,34 +3,44 @@
 <html lang="en" ng-app="SimplySocial">
 <head>
   <meta charset="utf-8">
-  <title>simplysocial</title>
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="A simple social media site.">
   <meta name="author" content="Dominik Guzei">
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,200' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="simplysocial.min.css?v=1.0">
+
+  <title>simplysocial</title>
+
+  <!-- Load Google Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:600,400,300' rel='stylesheet' type='text/css'>
+  <!-- Include compiled Stylesheets -->
+  <link rel="stylesheet" href="dist/simplysocial.min.css?v=1.0">
 </head>
 
-<body>
+<body ng-controller="ApplicationController as controller">
 
   <header>
     <!-- Sticky top menu that is always visible -->
     <div class="top-menu">
       <!-- Brand logo and home button -->
-      <a class="logo icon-button" href="#">simplysocial</a>
-      
+      <a class="logo icon-button" href="/#/">simplysocial</a>
+
       <div class="tools">
         <!-- Triggers overlay to compose new message -->
-        <a class="new-message icon-button" href="#/new-message">new message</a>
+        <a class="new-message icon-button"
+           ng-click="controller.openNewMessageModal()">
+           new message
+        </a>
         <!-- Search not implemented -->
         <input class="search" />
         <!-- Flyout menu with profile actions -->
         <div class="profile-menu">
-          <img class="portrait" src="images/profile-picture@2x.png" />
+          <img class="portrait" src="../images/profile-picture@2x.png" />
           <ul class="flyout arrow-box">
             <li>Profile</li>
             <li>Followers</li>
             <li>Following</li>
-            <li>Settings</li>
+            <li><a href="/#/settings">Settings</a></li>
           </ul>
         </div>
       </div>
@@ -38,6 +48,19 @@
   </header>
 
   <div ng-view></div>
-  <script src="simplysocial.min.js"></script>
+
+  <footer>
+    <div class="links">
+      <a href="#">ABOUT US</a>
+      <a href="#">SUPPORT</a>
+      <a href="#">PRIVACY</a>
+      <a href="#">TERMS</a>
+    </div>
+    <span class="copyright">© 2015 simplysocial</span>
+  </footer>
+
+  <!-- Load Javascripts -->
+  <script src="dist/vendor.min.js?v=1.0"></script>
+  <script src="dist/simplysocial.min.js?v=1.0"></script>
 </body>
 </html>

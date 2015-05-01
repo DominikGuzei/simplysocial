@@ -1,0 +1,62 @@
+@import "../config/devices";
+@import "../mixins/media_for";
+
+header {
+  background-color: black;
+}
+
+.top-menu {
+  padding-top: 18px;
+
+  .logo {
+    display: block;
+    float: left;
+    width: 136px;
+    height: 24px;
+    background-image: url('../images/logo.png');
+    background-size: 100%;
+    @include media-for($retina-devices) {
+      background-image: url('../images/logo@2x.png');
+    }
+  }
+
+  .tools {
+    float: right;
+    > * {
+      display: block;
+      float: left;
+      margin-left: 25px;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    .new-message {
+      width: 30px;
+      height: 25px;
+      margin-top: 3px;
+      background-image: url('../images/icons/new-message.png');
+      background-size: 100%;
+      @include media-for($retina-devices) {
+        background-image: url('../images/icons/new-message@2x.png');
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .search {
+      width: 200px;
+      height: 30px;
+      border: 1px solid #404246;
+      box-sizing: border-box;
+      border-radius: 2px;
+      background: black url('../images/icons/search.png') 95% center no-repeat;
+      background-size: 16px;
+      @include media-for($retina-devices) {
+        background-image: url('../images/icons/search@2x.png');
+      }
+    }
+  }
+}

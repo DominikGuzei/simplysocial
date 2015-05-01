@@ -19,10 +19,8 @@ button {
   border: none;
   background: none;
   padding: 0;
-}
 
-.icon-button {
-  overflow: hidden;
-  text-indent: -999px;
-  background-repeat: no-repeat;
+  &:hover {
+    cursor: pointer;
+  }
 }

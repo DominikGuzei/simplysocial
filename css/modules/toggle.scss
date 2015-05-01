@@ -1,0 +1,57 @@
+@import "../config/devices";
+@import "../mixins/media_for";
+
+.toggle {
+
+  label {
+    height: 25px;
+    padding-left: 60px;
+    display: block;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  [type='checkbox'] {
+
+    display:none;
+
+    + label {
+      background-size: 50px 25px;
+      background-repeat: no-repeat;
+      background-image: url('../images/icons/toggle-off.png');
+      @include media-for($retina-devices) {
+        background-image: url('../images/icons/toggle-off@2x.png');
+      }
+    }
+
+    &[checked='checked'] + label {
+      background-image: url('../images/icons/toggle-on.png');
+      @include media-for($retina-devices) {
+        background-image: url('../images/icons/toggle-on@2x.png');
+      }
+    }
+  }
+
+  [type='radio'] {
+    display:none;
+
+    + label {
+      background-size: 23px;
+      background-repeat: no-repeat;
+      padding-left: 40px;
+      background-image: url('../images/icons/radio-off.png') no-repeat;
+      @include media-for($retina-devices) {
+        background-image: url('../images/icons/radio-off@2x.png');
+      }
+    }
+
+    &[checked='checked'] + label {
+      background-image: url('../images/icons/radio-on.png');
+      @include media-for($retina-devices) {
+        background-image: url('../images/icons/radio-on@2x.png');
+      }
+    }
+  }
+}

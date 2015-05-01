@@ -1,68 +1,93 @@
 var gulp = require('gulp');
-var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var minifyCss = require('gulp-minify-css');
-var sourcemaps = require('gulp-sourcemaps');
+var flatten = require('gulp-flatten');
+var concat = require('gulp-concat');
+var concatWithSourceMaps = require('gulp-concat-sourcemap');
+var connect = require('gulp-connect');
+var sass = require('gulp-sass');
 
 var paths = {
+  vendorScripts: [
+    'bower_components/jquery/dist/jquery.js',
+    'bower_components/angular/angular.js',
+    'bower_components/angular-route/angular-route.js',
+    'bower_components/ngDialog/js/ngDialog.js',
+    'node_modules/angular-retina/dist/angular-retina.js',
+  ],
   scripts: [
-    'bower_components/jquery/dist/jquery.min.js',
-    'bower_components/angular/angular.min.js',
-    'bower_components/angular-route/angular-route.min.js',
     'js/vendor/*.js',
     'js/application.js',
     'js/**/*.js',
   ],
   styles: [
-    'css/base.css',
-    'css/layout.css',
-    'css/mixins/*.css',
-    'css/modules/*.css',
-    'css/theme.css'
+    'css/base.scss',
+    'css/vendor/*.scss',
+    'css/pages/*.scss',
+    'css/modules/*.scss',
+    'css/layout.scss',
+    'css/theme.scss'
   ]
 };
 
-// DEV: Concatenate and minify Javascripts with sourcemaps
+output = './dist';
+
+// Concatenate and minify vendor scripts
+gulp.task('vendor', function() {
+  return gulp.src(paths.vendorScripts)
+    .pipe(concat('vendor.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest(output));
+});
+
+// Concatenate vendor scripts
+gulp.task('vendor-dev', function() {
+  return gulp.src(paths.vendorScripts)
+    .pipe(concatWithSourceMaps('vendor.min.js'))
+    .pipe(gulp.dest(output));
+});
+
+// Concatenate and minify Javascripts with sourcemaps
+gulp.task('js', function() {
+  return gulp.src(paths.scripts)
+    .pipe(concat('simplysocial.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest(output));
+});
+
+// Concatenate and minify Javascripts with sourcemaps
 gulp.task('js-dev', function() {
   return gulp.src(paths.scripts)
-    .pipe(sourcemaps.init())
-    .pipe(uglify())
-    .pipe(sourcemaps.write())
-    .pipe(concat('simplysocial.min.js'))
-    .pipe(gulp.dest('./'));
+    .pipe(concatWithSourceMaps('simplysocial.min.js'))
+    .pipe(gulp.dest(output));
 });
 
-// BUILD: Concatenate and minify Javascripts
-gulp.task('js-build', function() {
-  return gulp.src(paths.scripts)
-    .pipe(uglify())
-    .pipe(concat('simplysocial.min.js'))
-    .pipe(gulp.dest('./'));
+// Concatenate and minify CSS with sourcemaps
+gulp.task('css', function() {
+  return gulp.src(paths.styles)
+    .pipe(sass())
+    .pipe(concat('simplysocial.min.css'))
+    .pipe(minifyCss())
+    .pipe(gulp.dest(output));
 });
 
-// DEV: Concatenate and minify CSS with sourcemaps
+// Concatenate and minify CSS with sourcemaps
 gulp.task('css-dev', function() {
   return gulp.src(paths.styles)
-    .pipe(sourcemaps.init())
-    .pipe(minifyCss())
-    .pipe(sourcemaps.write())
-    .pipe(concat('simplysocial.min.css'))
-    .pipe(gulp.dest('./'));
+    .pipe(sass())
+    .pipe(concatWithSourceMaps('simplysocial.min.css'))
+    .pipe(gulp.dest(output));
 });
 
-// BUILD: Concatenate and minify CSS
-gulp.task('css-build', function() {
-  return gulp.src(paths.styles)
-    .pipe(minifyCss())
-    .pipe(concat('simplysocial.min.css'))
-    .pipe(gulp.dest('./'));
+gulp.task('connect', function() {
+  connect.server();
 });
 
 gulp.task('watch', function () {
+  gulp.watch(paths.vendor, ['vendor-dev']);
   gulp.watch(paths.scripts, ['js-dev']);
   gulp.watch(paths.styles, ['css-dev']);
-  gulp.watch('gulpfile.js', ['js-dev', 'css-dev']);
 });
 
-gulp.task('dev', ['js-dev', 'css-dev', 'watch']);
-gulp.task('build', ['js-build', 'css-build']);
+gulp.task('dev', ['vendor-dev', 'js-dev', 'css-dev', 'watch', 'connect']);
+gulp.task('build', ['vendor', 'js', 'css']);

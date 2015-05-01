@@ -1,0 +1,36 @@
+// COMPOSER
+$hero-composer-bg: #00b286;
+
+// SUB NAV
+$subnav-color: #bec3cc;
+$subnav-active-color: white;
+$subnav-active-border-color: #00cc99;
+$subnav-icon-color: #747c83;
+$subnav-icon-active-color: white;
+
+// POSTS
+$post-author-color: #3f454d;
+$post-text-color: #70767f;
+$post-border-color: #e4e6ea;
+
+// COMMENTS
+$comments-toggle-color: #bec3cc;
+$comments-bg-color: #f9fafb;
+$comments-border-color: $post-border-color;
+
+// FOOTER
+$footer-link-color: #00b286;
+
+// PAGES
+$settings-h1-color: #3f454d;
+$settings-h2-color: #70767f;
+$settings-correct-color: #00b286;
+$settings-button-color: #bec3cc;
+$settings-section-border-color: #dee1e5;
+$settings-field-border-color: #bec3cc;
+$settings-field-focus-border-color: $settings-correct-color;
+$settings-field-focus-bg-color: rgba($settings-field-focus-border-color, 0.05);
+$settings-field-color: #3f454d;
+$settings-password-color: #c5c7c9;
+$settings-password-repeat-color: $settings-correct-color;
+$settings-label-color: #70767f;

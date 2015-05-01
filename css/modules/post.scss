@@ -1,0 +1,129 @@
+@import "../config/colors";
+@import "../config/sizes";
+@import "../config/devices";
+@import "../mixins/media_for";
+
+post {
+  display: block;
+
+  .post-content {
+    border: 1px solid $post-border-color;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .portrait {
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin: $post-padding;
+    margin-right: 0;
+  }
+
+  .content {
+    padding: $post-padding;
+    float: left;
+    width: calc(100% - 60px);
+  }
+
+  .author {
+    width: calc(100% - 100px);
+    display: inline-block;
+    margin: 0;
+    font-size: 16px;
+    color: $post-author-color;
+  }
+
+  .meta {
+
+    .reply, .like, .time {
+      display: inline-block;
+    }
+
+    .icon-button {
+      width: 15px;
+      height: 15px;
+      margin-right: 10px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .reply {
+      background-image: url('../images/icons/reply-to-post.png');
+      @include media-for($retina-devices) {
+        background-image: url('../images/icons/reply-to-post@2x.png');
+      }
+    }
+
+    .like {
+      background-image: url('../images/icons/like-post.png');
+      @include media-for($retina-devices) {
+        background-image: url('../images/icons/like-post@2x.png');
+      }
+    }
+
+    .time {
+      font-size: 14px;
+      color: $post-text-color;
+    }
+  }
+
+  .message {
+    color: $post-text-color;
+    font-size: 15px;
+    margin: 0.5em 0;
+  }
+
+  .media {
+    width: 100%;
+    position: relative;
+    bottom: 3px;
+  }
+
+  .comment-toggle {
+    margin-top: 18px;
+    font-size: 12px;
+    color: $comments-toggle-color;
+    padding-right: 16px;
+    background: url('../images/icons/dropdown-triangle.png') center right;
+    background-size: 7px 4px;
+    background-repeat: no-repeat;
+    @include media-for($retina-devices) {
+      background-image: url('../images/icons/dropdown-triangle@2x.png');
+    }
+
+    &.is-expanded {
+      background-image: url('../images/icons/collapse-triangle.png');
+      @include media-for($retina-devices) {
+        background-image: url('../images/icons/collapse-triangle@2x.png');
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .comments {
+    clear: both;
+    margin-top: 25px;
+  }
+
+  comment {
+    display: block;
+    overflow: hidden;
+    background-color: $comments-bg-color;
+    border-bottom: 1px solid $comments-border-color;
+    &:first-child {
+      border-top: 1px solid $comments-border-color;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .content {
+      padding-bottom: $comment-padding;
+    }
+  }
+}

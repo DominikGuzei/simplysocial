@@ -15,7 +15,7 @@ and minify Javascript and CSS on the fly.
 
 Run
 ---
-Just run `gulp dev` to start watching file changes and kickoff the dev process.
+Enter `gulp dev` in your console and open the served page on http://localhost:8080
 
 Build
 -----

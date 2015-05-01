@@ -1,0 +1,87 @@
+@import "config/sizes";
+@import "config/devices";
+@import "mixins/media_for";
+
+.top-menu {
+  width: calc(100% - #{$page-padding});
+  height: 60px;
+  margin: 0 auto;
+
+  @include media-for($big-screen) {
+    width: $topmenu-max-width;
+  }
+
+  @include media-for($small-screen) {
+    .logo {
+      display: none;
+    }
+    .tools {
+      width: 100%;
+      float: none;
+      position: relative;
+
+      .search {
+        width: calc(100% - 130px);
+      }
+    }
+  }
+}
+
+#home {
+
+  .hero composer, .posts-list {
+    width: $layout-narrow;
+    margin: 0 auto;
+
+    @include media-for($small-screen) {
+      width: calc(100% - #{$page-padding});
+    }
+  }
+
+  .hero {
+    min-height: 426px;
+    overflow: hidden;
+    padding-top: 120px;
+    position: relative;
+
+    composer {
+      margin-bottom: 135px;
+    }
+
+    .subnav {
+      width: $layout-narrow;
+      position: absolute;
+      bottom: 0;
+      left: calc(50% - #{$layout-narrow/2});
+
+      @include media-for($small-screen) {
+        width: calc(100% - #{$page-padding});
+        left: $page-padding/2;
+
+        .filters li {
+          margin-right: 20px;
+          padding: 10px 5px;
+        }
+
+        .view-options {
+          top: 5px;
+        }
+      }
+    }
+
+    @include media-for($small-screen) {
+      min-height: 300px;
+      padding-top: 40px;
+
+      composer {
+        .message {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+
+  .posts-list {
+    margin-top: $posts-gap * 2;
+  }
+}
