@@ -12,6 +12,7 @@ var paths = {
     'bower_components/jquery/dist/jquery.js',
     'bower_components/angular/angular.js',
     'bower_components/angular-route/angular-route.js',
+    'bower_components/ngDialog/js/ngDialog.js',
     'node_modules/angular-retina/dist/angular-retina.js',
   ],
   scripts: [
@@ -21,6 +22,7 @@ var paths = {
   ],
   styles: [
     'css/base.scss',
+    'css/vendor/*.scss',
     'css/mixins/*.scss',
     'css/modules/*.scss',
     'css/layout.scss',

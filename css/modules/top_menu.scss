@@ -40,6 +40,10 @@ header {
       @include media-for($retina-devices) {
         background-image: url('../images/icons/new-message@2x.png');
       }
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     .search {

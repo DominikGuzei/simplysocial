@@ -1,0 +1,46 @@
+@import "../config/fonts";
+
+.new-message-modal .ngdialog-content {
+  background-color: #DEE1E6;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 300px;
+  z-index: 999;
+  overflow: hidden;
+
+  .headline {
+    margin: 30px 0 0 30px;
+    color: #8B919A;
+    @include font-bold();
+    font-size: 16px;
+  }
+
+  composer {
+    padding-top: 20px;
+
+    .message {
+      background-color: white;
+      color: #333;
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    .add-photo, .add-video {
+      color: #888C94;
+    }
+
+    .add-photo {
+      background-image: url('../images/icons/add-photo-dark.svg');
+    }
+
+    .add-video {
+      background-image: url('../images/icons/add-video-dark.svg');
+    }
+  }
+}
+
+.new-message-modal .ngdialog-close {
+  position: absolute;
+  right: 22px;
+  top: 10px;
+}

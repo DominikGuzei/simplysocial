@@ -39,6 +39,11 @@ composer {
     opacity: 0.5;
     font-size: 14px;
     margin-right: 36px;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
   }
 
   .add-photo {

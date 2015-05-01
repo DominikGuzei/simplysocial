@@ -21,13 +21,16 @@
 
   <header>
     <!-- Sticky top menu that is always visible -->
-    <div class="top-menu">
+    <div class="top-menu" ng-controller="TopMenuController as controller">
       <!-- Brand logo and home button -->
       <a class="logo icon-button" href="#">simplysocial</a>
 
       <div class="tools">
         <!-- Triggers overlay to compose new message -->
-        <a class="new-message icon-button" href="#/new-message">new message</a>
+        <a class="new-message icon-button"
+           ng-click="controller.openNewMessageModal()">
+           new message
+        </a>
         <!-- Search not implemented -->
         <input class="search" />
         <!-- Flyout menu with profile actions -->
