@@ -3,6 +3,16 @@ simplysocial
 A tiny web application prototype built by Dominik Guzei as part of the
 recruiting challenge at InVision.
 
+Things that work:
+-----------------
+Due to the short timeframe (2 days) I could just finish the minimum requirements:
+
+* Initial page + creating message
+* New message modal (but creating message does not work yet)
+* Got to settings screen via profile dropdown
+* Expand / collapse comments
+* Only text / image posts (no video)
+
 Setup
 -----
 To speedup development this web app uses node.js and bower to concatenate
